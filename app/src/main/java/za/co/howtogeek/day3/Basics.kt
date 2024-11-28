@@ -1,13 +1,14 @@
 package za.co.howtogeek.day3
 
 fun main(){
-    makeCoffee()
+    makeCoffee(1)
+    makeCoffee(2)
+    makeCoffee(3)
 }
 
-fun makeCoffee(){
-    println("Order coffee beans from Pause")
-    println("Grind beans in Rancillio")
-    println("Heat water to 79C")
-    println("Invert Aeropres")
-    println("Steep coffee and press Aeropress")
+fun makeCoffee(sugarCount: Int){
+    if (sugarCount == 1){
+        println("Coffee with $sugarCount spoon of sugar.")
+    } else
+        println("Coffee with $sugarCount spoons of sugar.")
 }
