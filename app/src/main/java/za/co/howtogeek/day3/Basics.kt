@@ -1,5 +1,12 @@
 package za.co.howtogeek.day3
 
+data class CoffeeDetails(
+    val sugarCount: Int,
+    val name: String,
+    val size: String,
+    val amountOfCream: Int
+)
+
 fun main(){
     // Creating myBook object:
     var myBook = Book()
@@ -26,13 +33,15 @@ fun main(){
 
     println("The division of $num1 by $num2 = ${divide(num1.toDouble(), num2.toDouble())}")
 
+    val coffeeForDyls = CoffeeDetails(sugarCount = 0, name = "Dylan", "standard", 0)
+
     do {
         println("Who is this coffee for?")
         var name: String = readln()
         if (!name.equals("")) {
             println("How many sugars do you want with your coffee?")
             var sugarCount = readln().toInt()
-            makeCoffee(name, sugarCount)
+            makeCoffee(coffeeForDyls)
         }
     }while (!name.equals(""))
 }
@@ -47,10 +56,11 @@ fun divide(num1: Double, num2: Double): Double {
     return result
 }
 
-fun makeCoffee(name: String, sugarCount: Int){
-    when(sugarCount){
-        0 -> println("Coffee with no sugar for $name.")
-        1 -> println("Coffee with $sugarCount spoon of sugar for $name.")
-        else -> println("Coffee with $sugarCount spoons of sugar for $name.")
+// can use data class asparameters for functions:
+fun makeCoffee(coffeeDetails: CoffeeDetails){
+    when(coffeeDetails.sugarCount){
+        0 -> println("Coffee with no sugar for ${coffeeDetails.name} and ${coffeeDetails.amountOfCream}ml of cream.")
+        1 -> println("Coffee with ${coffeeDetails.sugarCount} spoon of sugar for ${coffeeDetails.name} and ${coffeeDetails.amountOfCream}ml of cream.")
+        else -> println("Coffee with ${coffeeDetails.sugarCount} spoons of sugar for ${coffeeDetails.name} and ${coffeeDetails.amountOfCream}ml of cream.")
     }
 }
