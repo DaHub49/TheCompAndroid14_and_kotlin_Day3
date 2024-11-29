@@ -1,6 +1,20 @@
 package za.co.howtogeek.day3
 
 fun main(){
+    // Creating myBook object:
+    var myBook = Book()
+    var customBook = Book("Highway to Hades", "Dylan Martin", 2014)
+
+    println("Book itle: ${myBook.title}, book author: ${myBook.author}, year published: ${myBook.yearPublished}")
+    println("Book itle: ${customBook.title}, book author: ${customBook.author}, year published: ${customBook.yearPublished}")
+    //println("{myBook.cuatomToString()}: ${myBook.customToString()}")
+    //println("{customBook.customToString()}: $customBook.customToString()")
+
+
+    // Creating a Dog object:
+    var bella = Dog("Bella", "Miniature Schnauzer")
+    println("${bella.name} is a ${bella.breed}")
+
     println("Please enter 2 numbers you'd like to add, and then devide, pressing <Enter> after each.")
     val num1 = readln().toInt()
     val num2 = readln().toInt()
