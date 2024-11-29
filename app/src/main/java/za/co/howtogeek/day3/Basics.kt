@@ -12,8 +12,11 @@ fun main(){
 
 
     // Creating a Dog object:
-    var bella = Dog("Bella", "Miniature Schnauzer")
-    println("${bella.name} is a ${bella.breed}")
+    var bella = Dog("Bella", "Miniature Schnauzer", 9)
+    println("${bella.name} is a ${bella.breed} and is ${bella.age} years old.\n")
+    println("A year has passed.")
+    bella.age++
+    println("\n${bella.name} is now ${bella.age} years old.")
 
     println("Please enter 2 numbers you'd like to add, and then devide, pressing <Enter> after each.")
     val num1 = readln().toInt()
